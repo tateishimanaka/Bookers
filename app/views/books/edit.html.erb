@@ -1,0 +1,22 @@
+
+
+<h1>Editing Book</h1>
+<%= form_with model:@book, local:true do |f| %>
+ <%= render 'layouts/error_messages', resource: @book %>
+ 
+ <div class="label">Title</div>
+   <div class="field"><%= f.text_field :title %></div>
+    
+  <div class="label">Body</div>
+  <div class="area"><%= f.text_area :body %></div>
+      
+　<div class="label">
+　 <div class="swich"><%= f.submit 'Update Book' %></div>
+　</div>
+<% end %>
+
+<span>
+ <%= link_to "Show", book_path(@book.id) %>
+ |
+ <%= link_to "Back", books_path %>
+</span>
